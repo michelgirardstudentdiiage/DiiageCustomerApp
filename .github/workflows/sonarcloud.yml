@@ -49,5 +49,5 @@ jobs:
         run: |
           .\.sonar\scanner\dotnet-sonarscanner begin /k:"michelgirardstudentdiiage_michelgirardstudentdiiage_with_GitHub_Actions" /o:"michelgirardstudentdiiage" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
           dotnet build src/Caltech.StudentInfoProject.WebUi/.
-          dotnet-coverage collect "dotnet test" -f xml -o "coverage.xml"
+          dotnet-coverage collect "dotnet test src/Caltech.StudentInfoProject.WebUi/" -f xml -o "coverage.xml"
           .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
